@@ -21,7 +21,7 @@ git clone https://github.com/build-admin/buildAdmin
     - `docker compose up ba-php-dev`
 4. 访问 **http://localhost:8000** 根据 [BA安装引导](https://doc.buildadmin.com/guide/install/webInstallGuide.html) 进行安装, 数据库地址为 **mysql**
 4. 开启前端开发服务, 需要先安装前端依赖，在网页安装引导中已经自动安装, 如果尚未安装需要执行
-    - `docker compose up ba-web-dev`
+    - `docker compose up ba-web-install`
 5. 同时开启前后端服务
     - `docker compose up ba-php-dev ba-web-dev`
 

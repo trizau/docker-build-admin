@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# 编辑器可选择此文件作为PHP可执行二进制文件
+
+cd `dirname $0`;
+
+CWD=`dirname $(pwd)`;
+if [[ $1 == 'bash' ]]; then
+    docker compose run -it --rm --no-deps ba-php-dev bash
+else
+    docker compose run -it --rm --no-deps ba-php-dev php $@
+fi;
