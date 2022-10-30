@@ -1,4 +1,6 @@
-FROM php:7.4-fpm as docker-build-admin
+ARG PHP_VERSION
+
+FROM php:${PHP_VERSION}-fpm as docker-build-admin
 SHELL ["/bin/bash", "-c"]
 WORKDIR /var/www
 
@@ -20,3 +22,8 @@ RUN docker-php-ext-configure gd --with-freetype && \
     docker-php-ext-install mysqli bcmath gd pdo pdo_mysql
 
 EXPOSE 9000 9001 1818 8000
+
+
+FROM docker-build-admin
+# 可以在此处安装其他扩展, 之后直接 dokcer compose build后即可
+# RUN docker-php-ext-install ...
